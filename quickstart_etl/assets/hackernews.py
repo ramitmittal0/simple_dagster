@@ -9,7 +9,7 @@ import requests
 from dagster import AssetExecutionContext, MaterializeResult, MetadataValue, asset
 
 
-@asset(group_name="hackernews", compute_kind="HackerNews API")
+@asset(group_name="hackernews", compute_kind="HackerNews API", tags={"domain": "marketing"})
 def topstory_ids() -> None:
     """Get up to 100 top stories from the HackerNews topstories endpoint.
 

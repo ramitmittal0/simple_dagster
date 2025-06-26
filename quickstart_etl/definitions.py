@@ -19,19 +19,8 @@ daily_refresh_schedule = ScheduleDefinition(
 )
 
 
-@op
-def foo_op():
-    return 5
-
-
-@graph_asset
-def my_asset():
-    return foo_op()
-
-
 my_assets = with_source_code_references(
     [
-        my_asset,
         *load_assets_from_package_module(assets),
     ]
 )
